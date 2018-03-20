@@ -1,0 +1,4 @@
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+	branch = master
