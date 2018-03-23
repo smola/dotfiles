@@ -4,6 +4,7 @@ if [[ -z ${USER} ]]; then
 	USER="$(whoami)"
 fi
 
+sudo apt install -y wget curl
 sudo apt install -y vim-gnome git zsh terminator keychain
 sudo apt install -y i3-wm i3status slock dmenu terminator fonts-dejavu
 sudo apt install -y openjdk-8-jdk build-essential
@@ -25,3 +26,5 @@ sudo gpasswd -a $USER docker
 #TODO: VScode
 #TODO: IntelliJ
 
+# Python
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
