@@ -27,4 +27,14 @@ sudo gpasswd -a $USER docker
 #TODO: IntelliJ
 
 # Python
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+# Node.js
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+
+# Ruby
+curl -sSL https://get.rvm.io | bash -s stable
+
+# Rust
+curl -sSf https://static.rust-lang.org/rustup.sh | sh
