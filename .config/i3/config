@@ -140,6 +140,9 @@ bindsym $mod+r mode "resize"
 # Switch workspace to toher monitor
 bindsym $mod+m move workspace to output right
 
+# Auto setup xrandr
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/auto_xrandr.sh
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
