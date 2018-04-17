@@ -39,6 +39,8 @@ curl -sSL https://get.rvm.io | bash -s stable
 # Rust
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
+# SDKman
+curl -s "https://get.sdkman.io" | bash 
 
 # Fonts
 mkdir -p ~/.local/share/fonts
