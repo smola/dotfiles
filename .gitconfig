@@ -1,3 +1,5 @@
 [user]
 	email = santi@mola.io
 	name = Santiago M. Mola
+[core]
+	excludesfile = /home/smola/.gitignore_global
