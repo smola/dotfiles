@@ -1,0 +1,7 @@
+#!/bin/sh
+exec docker run -it --rm --read-only \
+	-v /etc/localtime:/etc/localtime:ro \
+	-v $HOME/.irssi:/home/user/.irssi:rw \
+	--user `id -u`:`id -g` \
+	irssi:latest \
+	"$@"
