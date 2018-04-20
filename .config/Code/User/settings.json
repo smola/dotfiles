@@ -3,4 +3,8 @@
     "editor.renderWhitespace": "boundary",
     "editor.fontLigatures": true,
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.rulers": [
+        80,
+        120
+    ]
 }
