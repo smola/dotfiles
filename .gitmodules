@@ -8,3 +8,6 @@
 [submodule ".oh-my-zsh-custom/themes/dracula"]
 	path = .oh-my-zsh-custom/themes/dracula
 	url = https://github.com/dracula/zsh.git
+[submodule ".dotfiles/dracula-xresources"]
+	path = .dotfiles/dracula-xresources
+	url = https://github.com/dracula/xresources.git
