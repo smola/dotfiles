@@ -1,10 +1,12 @@
 #!/bin/bash
 
-intern=eDP1
-extern=HDMI1
+#TODO: xrandr --listmonitors | awk '{ print $4 }'
+
+intern=eDP-1-1
+extern=HDMI-1-1
 
 if xrandr | grep "$extern disconnected"; then
 	xrandr --auto
 else
-	xrandr --output HDMI1 --mode 3840x2160 --left-of eDP1 --auto
+	xrandr --output $extern --mode 3840x2160 --left-of $intern --auto
 fi
