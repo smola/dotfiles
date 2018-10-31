@@ -8,4 +8,19 @@
         120
     ],
     "go.lintTool": "gometalinter",
+    "go.lintFlags": [
+        "--vendor",
+        "--fast",
+    ],
+    "go.coverOnSingleTest": true,
+    "go.coverOnTestPackage": true,
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500
+    },
+    "go.useLanguageServer": false,
+    "workbench.colorTheme": "Dracula",
+    "cSpell.language": "en",
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": true
 }
