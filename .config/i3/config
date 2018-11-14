@@ -138,7 +138,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+m move workspace to output right
 
 # Auto setup xrandr
-bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/auto_xrandr.sh
+bindsym $mod+Shift+m exec --no-startup-id ~/bin/autorandr --change
 
 #
 # Dracula theme
