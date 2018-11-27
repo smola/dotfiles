@@ -16,4 +16,4 @@
 	url = https://github.com/EliverLara/Ant-Dracula.git
 [submodule ".dotfiles/autorandr"]
 	path = .dotfiles/autorandr
-	url = git@github.com:wertarbyte/autorandr.git
+	url = git@github.com:phillipberndt/autorandr.git
