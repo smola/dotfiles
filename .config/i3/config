@@ -1,22 +1,17 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Notes: HDPI works better with i3 >=4.15. Default version in Ubuntu Xenial
-#        (4.11) does not.
 #
+# Font
+#
+# font pango:monospace 8        # default
+# font pango:DejaVu Sans Mono 8 # wide compat
+font pango: SauceCodePro Nerd Font 10
+
+#
+# Key bindings
 #
 
 # Win key
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -142,7 +137,8 @@ bindsym $mod+Shift+m exec --no-startup-id ~/bin/autorandr --change
 
 #
 # Dracula theme
-# https://github.com/gkroon/dracula-i3
+# https://github.com/dracula/i3
+#
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
@@ -157,6 +153,9 @@ bar {
   status_command i3status
   tray_output primary
 
+  position bottom
+  font pango: SauceCodePro Nerd Font 10
+
   colors {
     background #282A36
     statusline #F8F8F2
@@ -170,5 +169,4 @@ bar {
   }
 }
 
-# dracula dmenu
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
