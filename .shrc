@@ -3,6 +3,8 @@
 # Shell configuration that can be used as replacement for both ~/.bashrc and ~/.zshrc.
 # It can also be sourced on non-interactive shells.
 
+PATH="$HOME/bin/:$PATH"
+
 for conf in $(find $HOME/.profile.d/ -type f -name '*.sh' | sort); do
     . "$conf"
 done
@@ -21,3 +23,4 @@ _CURSHELL="${0/*\//}"
 for conf in $(find $HOME/.shrc.d/ -type f -name '*.sh' | sort); do
     . "$conf"
 done
+
