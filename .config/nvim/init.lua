@@ -3,23 +3,6 @@
 
 require("config.lazy")
 
-require("lazy").setup({
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
-	"mhartington/formatter.nvim",
-	"mfussenegger/nvim-lint",
-	"github/copilot.vim",
-	-- colorscheme
-	"navarasu/onedark.nvim",
-})
-
--- Color scheme
-require("onedark").setup({
-	style = "darker",
-})
-require("onedark").load()
-
 -- LSP and formatters
 require("mason").setup({})
 require("mason-lspconfig").setup({
@@ -39,8 +22,6 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
-
-lspconfig.rust_analyzer.setup({})
 
 -- Formatters
 require("formatter").setup({
