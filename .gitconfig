@@ -2,4 +2,4 @@
 	email = santi@mola.io
 	name = Santiago M. Mola
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore-global

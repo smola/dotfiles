@@ -1,0 +1,6 @@
+/.idea
+/.my-stuff
+.env
+.*.swp
+*.iml
+/.vscode
