@@ -17,3 +17,6 @@
 [submodule ".dotfiles/autorandr"]
 	path = .dotfiles/autorandr
 	url = git@github.com:phillipberndt/autorandr.git
+[submodule "submodules/catppuccin/rofi"]
+	path = submodules/catppuccin/rofi
+	url = https://github.com/catppuccin/rofi.git
