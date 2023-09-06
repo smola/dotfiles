@@ -14,7 +14,7 @@ fi
 __SHELL="${0}"
 
 # Source all configs
-for conf in $(find "$HOME/.shrc.d/" -type f -name '*.sh' | sort); do
+for conf in $(find "$HOME/.shrc.d/" -name '*.sh' | sort); do
   . "$conf"
 done
 
