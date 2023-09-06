@@ -20,3 +20,6 @@
 [submodule "submodules/catppuccin/rofi"]
 	path = submodules/catppuccin/rofi
 	url = https://github.com/catppuccin/rofi.git
+[submodule "submodules/catppuccin/xresources"]
+	path = submodules/catppuccin/xresources
+	url = https://github.com/catppuccin/xresources.git
