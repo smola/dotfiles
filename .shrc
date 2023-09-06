@@ -1,26 +1,22 @@
 # ~/.shrc
 # vim: set ft=sh
+# shellcheck shell=bash
 # Shell configuration that can be used as replacement for both ~/.bashrc and ~/.zshrc.
-# It can also be sourced on non-interactive shells.
+# It can also be sourced in non-interactive shells.
+#
 
-PATH="$HOME/bin/:$PATH"
+if [ -n "$BASH_VERSINFO" ] && [ $BASH_VERSINFO -le 3 ]; then
+  # Do not set up the conf on too old bash.
+  return 0
+fi
 
-for conf in $(find $HOME/.profile.d/ -type f -name '*.sh' | sort); do
-    . "$conf"
+# Prepare environment
+__SHELL="${0}"
+
+# Source all configs
+for conf in $(find "$HOME/.shrc.d/" -type f -name '*.sh' | sort); do
+  . "$conf"
 done
 
-# If not running interactively, stop here.
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-_CURSHELL="${0/*\//}"
-
-#
-# Source all configuration files.
-#
-for conf in $(find $HOME/.shrc.d/ -type f -name '*.sh' | sort); do
-    . "$conf"
-done
-
+# Clean up environment
+unset __SHELL
