@@ -1,10 +1,11 @@
+# shellcheck shell=bash
 
 if [[ ! -d $HOME/.pyenv ]]; then
     return 0
 fi
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-if which pyenv &> /dev/null; then
+_prepend_path_if_exists "$HOME/.pyenv/bin"
+if _check_command pyenv; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi

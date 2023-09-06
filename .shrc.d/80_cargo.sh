@@ -1,4 +1,4 @@
 
-if [[ -d $HOME/.cargo/bin ]]; then
-	export PATH="$PATH:$HOME/.cargo/bin"
+if [[ -f  ~/.cargo/env ]]; then
+  source ~/.cargo/env
 fi
