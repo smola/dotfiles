@@ -6,11 +6,17 @@ if os.getenv("GITHUB_COPILOT_ALLOWED") == "true" then
 			cmd = "Copilot",
 			build = ":Copilot auth",
 			opts = {
-				suggestion = { enabled = true },
+				suggestion = {
+					auto_trigger = true,
+					enabled = true,
+				},
 				panel = { enabled = true },
 				filetypes = {
-					markdown = true,
 					help = true,
+					lua = true,
+					markdown = true,
+					python = true,
+					yaml = true,
 				},
 			},
 		},
