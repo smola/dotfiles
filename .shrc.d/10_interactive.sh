@@ -20,3 +20,23 @@ if [ -x /usr/bin/dircolors ]; then
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 fi
+
+if [[ $TERM = xterm-kitty ]]; then
+	export TERM=xterm
+fi
+
+if [[ -n $WAYLAND_DISPLAY ]]; then
+	for term in foot kitty terminator xterm; do
+		if _check_command $term; then
+			export TERMINAL=$term
+			break
+		fi
+	done
+else
+	for term in kitty terminator xterm; do
+		if _check_command $term; then
+			export TERMINAL=$term
+			break
+		fi
+	done
+fi
