@@ -40,3 +40,9 @@ else
 		fi
 	done
 fi
+
+# Use bat if available, and avoid conflict
+# see https://github.com/sharkdp/bat/issues/982
+if command -v batcat && ! command -v bat &>/dev/null; then
+	alias bat='batcat'
+fi
