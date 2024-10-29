@@ -4,7 +4,7 @@ if [[ -n "${SDKMAN_DIR:-}" ]]; then
 	___init() {
 		local id lower_id upper_id
 		declare -r default_id="11"
-		declare -ra all_ids=(8 11 17 21 zulu8 zulu11 ibm8 semeru8 semeru11 semeru17 zulu7 graalvm17)
+		declare -ra all_ids=(7 8 11 17 21 zulu8 zulu11 ibm8 semeru8 semeru11 semeru17 zulu7 graalvm17)
 		for id in "${all_ids[@]}"; do
 			lower_id="$(echo -n "${id}" | tr '[:upper:]' '[:lower:]')"
 			upper_id="$(echo -n "${id}" | tr '[:lower:]' '[:upper:]')"
