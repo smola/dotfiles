@@ -4,3 +4,4 @@
 .*.swp
 *.iml
 /.vscode
+.ruff_cache
