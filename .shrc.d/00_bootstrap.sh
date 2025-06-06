@@ -22,6 +22,13 @@ _is_interactive_shell() {
     esac
 }
 
+_append_path_if_exists() {
+    local path="${1}"
+    if [[ -d "${path}" ]]; then
+        export PATH="${PATH}:${path}"
+    fi
+}
+
 _prepend_path_if_exists() {
     local path="${1}"
     if [[ -d "${path}" ]]; then
