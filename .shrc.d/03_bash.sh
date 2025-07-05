@@ -36,3 +36,8 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
+
+# Omarchy defaults
+if [ -f ~/.local/share/omarchy/default/bash/rc ]; then
+	source ~/.local/share/omarchy/default/bash/rc
+fi
