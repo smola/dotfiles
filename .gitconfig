@@ -1,7 +1,0 @@
-[user]
-	email = santi@mola.io
-	name = Santiago Mola
-[core]
-	excludesfile = ~/.gitignore_global
-[init]
-	defaultBranch = main
