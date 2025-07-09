@@ -1,1 +1,1 @@
-alias cursor=cursor --enable-features=UseOzonePlatform --ozone-platform=x11
+alias cursor="cursor --enable-features=UseOzonePlatform --ozone-platform=x11"
