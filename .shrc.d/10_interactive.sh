@@ -4,7 +4,9 @@ if ! _is_interactive_shell; then
 	return 0
 fi
 
-export EDITOR=nvim
+if _check_command nvim; then
+	export EDITOR=nvim
+fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -26,14 +28,14 @@ if [[ $TERM = xterm-kitty ]]; then
 fi
 
 if [[ -n $WAYLAND_DISPLAY ]]; then
-	for term in foot kitty terminator xterm; do
+	for term in alacritty kitty terminator xterm; do
 		if _check_command $term; then
 			export TERMINAL=$term
 			break
 		fi
 	done
 else
-	for term in kitty terminator xterm; do
+	for term in alacritty kitty terminator xterm; do
 		if _check_command $term; then
 			export TERMINAL=$term
 			break
@@ -43,6 +45,20 @@ fi
 
 # Use bat if available, and avoid conflict
 # see https://github.com/sharkdp/bat/issues/982
+export _BAT_COMMAND="bat"
 if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
+	export _BAT_COMMAND="batcat"
 	alias bat='batcat'
+fi
+
+function _pretty_cat() {
+	local args=("$@")
+	if [ -t 1 ]; then
+		"$_BAT_COMMAND" --plain --paging never "${args[@]}"
+	else
+		cat "${args[@]}"
+	fi
+}
+if command -v bat &> /dev/null; then
+  alias cat="_pretty_cat"
 fi
