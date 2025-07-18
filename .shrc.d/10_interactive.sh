@@ -1,5 +1,22 @@
 # shellcheck shell=bash
 
+if [[ -n $WAYLAND_DISPLAY ]]; then
+	for term in alacritty kitty terminator xterm; do
+		if _check_command $term; then
+			export TERMINAL=$term
+			break
+		fi
+	done
+else
+	for term in alacritty kitty terminator xterm; do
+		if _check_command $term; then
+			export TERMINAL=$term
+			break
+		fi
+	done
+fi
+
+
 if ! _is_interactive_shell; then
 	return 0
 fi
@@ -25,22 +42,6 @@ fi
 
 if [[ $TERM = xterm-kitty ]]; then
 	export TERM=xterm
-fi
-
-if [[ -n $WAYLAND_DISPLAY ]]; then
-	for term in alacritty kitty terminator xterm; do
-		if _check_command $term; then
-			export TERMINAL=$term
-			break
-		fi
-	done
-else
-	for term in alacritty kitty terminator xterm; do
-		if _check_command $term; then
-			export TERMINAL=$term
-			break
-		fi
-	done
 fi
 
 # Use bat if available, and avoid conflict
