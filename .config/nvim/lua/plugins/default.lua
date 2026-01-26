@@ -6,7 +6,7 @@ return {
 				"flake8",
 				"shellcheck",
 				"shfmt",
-				"stylua",
+				-- "stylua",
 			},
 		},
 	},

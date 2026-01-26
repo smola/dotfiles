@@ -13,6 +13,11 @@ fi
 # Prepare environment
 __SHELL="${0}"
 
+if [ "$(tty)" = /dev/tty2 ]; then
+  echo "TTY2: skipping all bashrc evaluation"
+  return
+fi
+
 # Source all configs
 for conf in $(find "$HOME/.shrc.d/" -name '*.sh' | sort); do
   . "$conf"
@@ -20,3 +25,4 @@ done
 
 # Clean up environment
 unset __SHELL
+
