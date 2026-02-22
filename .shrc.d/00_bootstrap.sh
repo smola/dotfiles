@@ -6,8 +6,7 @@
 # shellcheck disable=SC3043
 
 _check_command() {
-    local cmd
-    for cmd in "${@}"; do
+    for cmd in "$@"; do
         if ! command -v "${cmd}" >/dev/null 2>&1; then
             return 1
         fi
@@ -23,23 +22,28 @@ _is_interactive_shell() {
 }
 
 _append_path_if_exists() {
-    local path="${1}"
-    if [[ -d "${path}" ]]; then
-        export PATH="${PATH}:${path}"
+    path=${1}
+    if [ -d "${path}" ]; then
+        PATH="${PATH}:${path}"
+        export PATH
     fi
 }
 
 _prepend_path_if_exists() {
-    local path="${1}"
-    if [[ -d "${path}" ]]; then
-        export PATH="${path}:${PATH}"
+    path=${1}
+    if [ -d "${path}" ]; then
+        PATH="${path}:${PATH}"
+        export PATH
     fi
 }
 
-if [[ -n "${ZSH_VERSION:-}" ]]; then
-    export readonly _CURSHELL=zsh
-elif [[ -n "${BASH_VERSION:-}" ]]; then
-    export readonly _CURSHELL=bash
+if [ -n "${ZSH_VERSION:-}" ]; then
+    _CURSHELL=zsh
+elif [ -n "${BASH_VERSION:-}" ]; then
+    _CURSHELL=bash
 else
-    export readonly _CURSHELL=
+    _CURSHELL=
 fi
+
+readonly _CURSHELL
+export _CURSHELL

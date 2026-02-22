@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-if [[ $_CURSHELL != bash ]]; then
+if [ "${_CURSHELL}" != "bash" ]; then
 	return 0
 fi
 
@@ -39,5 +39,5 @@ fi
 
 # Omarchy defaults
 if [ -f ~/.local/share/omarchy/default/bash/rc ]; then
-	source ~/.local/share/omarchy/default/bash/rc
+	. ~/.local/share/omarchy/default/bash/rc
 fi

@@ -1,15 +1,15 @@
 # shellcheck shell=bash
 
-if [[ -n $WAYLAND_DISPLAY ]]; then
+if [ -n "${WAYLAND_DISPLAY:-}" ]; then
 	for term in alacritty kitty terminator xterm; do
-		if _check_command $term; then
+		if _check_command "$term"; then
 			export TERMINAL=$term
 			break
 		fi
 	done
 else
 	for term in alacritty kitty terminator xterm; do
-		if _check_command $term; then
+		if _check_command "$term"; then
 			export TERMINAL=$term
 			break
 		fi
@@ -40,26 +40,25 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-if [[ $TERM = xterm-kitty ]]; then
+if [ "${TERM:-}" = "xterm-kitty" ]; then
 	export TERM=xterm
 fi
 
 # Use bat if available, and avoid conflict
 # see https://github.com/sharkdp/bat/issues/982
 export _BAT_COMMAND="bat"
-if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
+if command -v batcat >/dev/null 2>&1 && ! command -v bat >/dev/null 2>&1; then
 	export _BAT_COMMAND="batcat"
 	alias bat='batcat'
 fi
 
-function _pretty_cat() {
-	local args=("$@")
+_pretty_cat() {
 	if [ -t 1 ]; then
-		"$_BAT_COMMAND" --plain --paging never "${args[@]}"
+		"$_BAT_COMMAND" --plain --paging never "$@"
 	else
-		cat "${args[@]}"
+		cat "$@"
 	fi
 }
-if command -v bat &> /dev/null; then
+if command -v bat >/dev/null 2>&1; then
   alias cat="_pretty_cat"
 fi

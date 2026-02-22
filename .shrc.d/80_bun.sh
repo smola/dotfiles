@@ -1,4 +1,4 @@
-if [[ ! -d $HOME/.bun ]]; then
+if [ ! -d "$HOME/.bun" ]; then
     return 0
 fi
 

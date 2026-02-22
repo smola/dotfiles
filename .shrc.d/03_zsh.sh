@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-if [[ $_CURSHELL != zsh ]]; then
+if [ "${_CURSHELL}" != "zsh" ]; then
 	return 0
 fi
 
@@ -11,7 +11,7 @@ fi
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 
-if [[ $_CURSHELL = zsh ]]; then
+if [ "${_CURSHELL}" = "zsh" ]; then
 	export HISTFILE="$HOME/.zsh_history"
 
 	# bash: HISTCONTROL=ignoredups

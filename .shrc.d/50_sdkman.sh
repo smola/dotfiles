@@ -5,10 +5,10 @@
 
 # shellcheck shell=bash
 
-if [[ -d $HOME/.sdkman ]]; then
+if [ -d "$HOME/.sdkman" ] && { [ "${_CURSHELL:-}" = "bash" ] || [ "${_CURSHELL:-}" = "zsh" ]; }; then
 	export SDKMAN_DIR="$HOME/.sdkman"
-	if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]; then
+	if [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
 		# shellcheck source=/dev/null
-		source "$SDKMAN_DIR/bin/sdkman-init.sh"
+		. "$SDKMAN_DIR/bin/sdkman-init.sh"
 	fi
 fi

@@ -1,4 +1,4 @@
 
-if [[ -f  ~/.cargo/env ]]; then
-  source ~/.cargo/env
+if [ -f ~/.cargo/env ]; then
+  . ~/.cargo/env
 fi

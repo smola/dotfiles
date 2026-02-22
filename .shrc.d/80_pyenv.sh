@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-if [[ ! -d $HOME/.pyenv ]]; then
+if [ ! -d "$HOME/.pyenv" ]; then
     return 0
 fi
 
