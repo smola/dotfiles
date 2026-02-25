@@ -23,6 +23,8 @@ fi
 
 if _check_command nvim; then
 	export EDITOR=nvim
+elif _check_command vim; then
+	export EDITOR=vim
 fi
 
 # colored GCC warnings and errors
