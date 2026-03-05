@@ -1,3 +1,3 @@
 
 # opencode
-export PATH=$PATH:/home/smola/.opencode/bin
+export PATH=$PATH:$HOME/.opencode/bin

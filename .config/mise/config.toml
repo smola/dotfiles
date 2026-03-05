@@ -5,6 +5,7 @@ python = ["latest", "3.12"]
 ruby = "latest"
 
 [settings]
+experimental = true
 
 [settings.ruby]
 compile = false
